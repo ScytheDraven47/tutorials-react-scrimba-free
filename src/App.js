@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components'
+import Card from './components/Card'
+// import ReactFacts from './components/ReactFacts'
+// import DigitalProfile from './components/DigitalProfile'
+// import AirBnb from './components/AirBnb'
+// import ContactList from './components/ContactList'
+// import Jokes from './components/Jokes'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+	<AppWrapper>
+		<Card>
+			{/* <ReactFacts /> */}
+			{/* <DigitalProfile /> */}
+			{/* <AirBnb /> */}
+			{/* <ContactList /> */}
+			{/* <Jokes /> */}
+		</Card>
+	</AppWrapper>
+)
 
-export default App;
+export default App
+
+const AppWrapper = styled.div`
+	height: 100vh;
+	width: 100vw;
+	display: grid;
+	place-items: center;
+`
