@@ -1,15 +1,19 @@
 import styled from 'styled-components'
 import Card from './components/Card'
-import TravelJournal from './components/TravelJournal'
-import ReactFacts from './components/ReactFacts'
-import DigitalProfile from './components/DigitalProfile'
-import AirBnb from './components/AirBnb'
-import ContactList from './components/ContactList'
-import Jokes from './components/Jokes'
+import MemeGenerator from './components/MemeGenerator'
+// import TravelJournal from './components/TravelJournal'
+// import ReactFacts from './components/ReactFacts'
+// import DigitalProfile from './components/DigitalProfile'
+// import AirBnb from './components/AirBnb'
+// import ContactList from './components/ContactList'
+// import Jokes from './components/Jokes'
 
 const App = () => (
 	<AppWrapper>
-		<Card>
+		<Card width='550px'>
+			<MemeGenerator />
+		</Card>
+		{/* <Card>
 			<ReactFacts />
 		</Card>
 		<Card>
@@ -26,7 +30,7 @@ const App = () => (
 		</Card>
 		<Card>
 			<TravelJournal />
-		</Card>
+		</Card> */}
 	</AppWrapper>
 )
 
