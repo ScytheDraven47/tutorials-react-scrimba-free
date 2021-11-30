@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Card from './components/Card'
+import LightBoxes from './components/LightBoxes'
 import MemeGenerator from './components/MemeGenerator'
 // import TravelJournal from './components/TravelJournal'
 // import ReactFacts from './components/ReactFacts'
@@ -10,6 +11,9 @@ import MemeGenerator from './components/MemeGenerator'
 
 const App = () => (
 	<AppWrapper>
+		<Card width='35rem'>
+			<LightBoxes />
+		</Card>
 		<Card width='550px'>
 			<MemeGenerator />
 		</Card>
