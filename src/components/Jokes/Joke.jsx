@@ -1,17 +1,26 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 
 const Joke = ({ setup, punchline }) => {
-	let joke = setup ? (
-		<p>
-			{setup}
-			<br />
-			<i>{punchline}</i>
-		</p>
-	) : (
-		<p>{punchline}</p>
-	)
+	const [isShown, setIsShown] = useState(false)
 
-	return <StyledDiv>{joke}</StyledDiv>
+	const toggleShown = () => {
+		setIsShown((prev) => !prev)
+	}
+
+	return (
+		<StyledDiv onClick={toggleShown}>
+			{setup ? (
+				<p>
+					{setup}
+					<br />
+					{isShown && <i>{punchline}</i>}
+				</p>
+			) : (
+				<p>{punchline}</p>
+			)}
+		</StyledDiv>
+	)
 }
 
 export default Joke
