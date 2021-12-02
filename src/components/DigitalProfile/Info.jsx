@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { FaEnvelope } from 'react-icons/fa'
 
 const Info = ({ imageUrl, name, title, website, email }) => {

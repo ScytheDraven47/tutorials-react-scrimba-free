@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import Experiences from './Experiences'
 import Header from './Header'
 import Hero from './Hero'

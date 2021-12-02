@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { FaGlobeAmericas } from 'react-icons/fa'
 
 const Header = () => {

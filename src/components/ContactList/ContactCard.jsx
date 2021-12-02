@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { FaPhone, FaEnvelope } from 'react-icons/fa'
 
 const ContactCard = ({ id, imageUrl, name, phone, email }) => {

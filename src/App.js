@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 /* eslint-disable no-unused-vars */
 import Card from './components/Card'

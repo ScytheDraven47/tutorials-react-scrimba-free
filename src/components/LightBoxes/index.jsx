@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import Box from './Box'
 const initialBoxes = Array.from({ length: 100 }, (_, i) => ({
 	id: i,

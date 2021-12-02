@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { FaMapMarker } from 'react-icons/fa'
 import { maps_base_url } from './data'
 

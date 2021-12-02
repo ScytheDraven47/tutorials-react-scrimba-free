@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const Card = ({ children, height, width }) => (
 	<StyledDiv style={{ height, width }}>{children}</StyledDiv>

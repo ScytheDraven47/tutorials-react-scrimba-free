@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import Joke from './Joke'
 import { jokes } from './jokes'
 
