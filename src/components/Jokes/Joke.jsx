@@ -4,17 +4,22 @@ import styled from '@emotion/styled'
 const Joke = ({ setup, punchline }) => {
 	const [isShown, setIsShown] = useState(false)
 
-	const toggleShown = () => {
-		setIsShown((prev) => !prev)
-	}
+	// const toggleShown = () => {
+	// 	setIsShown((prev) => !prev)
+	// }
+
+	const showPunchline = () => setIsShown(true)
+	const hidePunchline = () => setIsShown(false)
 
 	return (
-		<StyledDiv onClick={toggleShown}>
+		<StyledDiv onMouseEnter={showPunchline} onMouseLeave={hidePunchline}>
 			{setup ? (
 				<p>
 					{setup}
 					<br />
-					{isShown && <i>{punchline}</i>}
+					<span className={`punchline ${isShown ? 'show' : ''}`}>
+						{punchline}
+					</span>
 				</p>
 			) : (
 				<p>{punchline}</p>
@@ -30,4 +35,19 @@ const StyledDiv = styled.div`
 	border-radius: 10px;
 	box-shadow: 0px 0px 1em rgba(255, 255, 255, 0.1);
 	padding: 0 1em;
+	overflow: hidden;
+
+	.punchline {
+		--animation: 0.25s ease-in-out;
+		font-style: italic;
+		display: block;
+		opacity: 0;
+		transform: translateY(-100%);
+		transition: transform var(--animation), opacity var(--animation);
+
+		&.show {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
 `
