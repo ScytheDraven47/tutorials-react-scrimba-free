@@ -9,7 +9,7 @@ interface MemeProps {
 	}
 }
 
-const Meme: React.FC<MemeProps> = ({ url, name, userText }) => {
+const Meme = ({ url, name, userText }: MemeProps) => {
 	return (
 		<StyledDiv>
 			<img src={url} alt={name} />

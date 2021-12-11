@@ -11,12 +11,7 @@ interface FormProps {
 	isReady: boolean
 }
 
-const Form: React.FC<FormProps> = ({
-	userText,
-	changeText,
-	getNewMeme,
-	isReady,
-}) => {
+const Form = ({ userText, changeText, getNewMeme, isReady }: FormProps) => {
 	return (
 		<StyledDiv>
 			<input

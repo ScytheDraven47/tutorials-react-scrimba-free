@@ -15,7 +15,7 @@ interface MemeType {
 	box_count: number
 }
 
-const MemeGenerator: React.FC = () => {
+const MemeGenerator = () => {
 	const [meme, setMeme] = useState<MemeType | null>(null)
 	const [memes, setMemes] = useState<MemeType[]>([])
 	const [userText, setUserText] = useState({ top: '', bottom: '' })
