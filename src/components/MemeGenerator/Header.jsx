@@ -16,7 +16,7 @@ const Header = () => {
 export default Header
 
 const StyledHeader = styled.header`
-	background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+	background: var(--clr-feat-gradient);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

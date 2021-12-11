@@ -1,11 +1,11 @@
 import styled from '@emotion/styled'
 
-const Meme = ({ url, name, topText, bottomText }) => {
+const Meme = ({ url, name, userText }) => {
 	return (
 		<StyledDiv>
 			<img src={url} alt={name} />
-			<span className='topText'>{topText}</span>
-			<span className='bottomText'>{bottomText}</span>
+			<span className='memeText topText'>{userText.top}</span>
+			<span className='memeText bottomText'>{userText.bottom}</span>
 		</StyledDiv>
 	)
 }
@@ -20,19 +20,18 @@ const StyledDiv = styled.div`
 		width: 100%;
 	}
 
-	span {
-		font-family: 'Oswald', sans-serif;
+	.memeText {
 		position: absolute;
-		font-size: 3rem;
-		line-height: 1em;
-		font-weight: bold;
-		color: black;
-		-webkit-text-fill-color: white; /* Will override color (regardless of order) */
-		-webkit-text-stroke-width: 2px;
-		-webkit-text-stroke-color: black;
+		left: 10%;
+		right: 10%;
+		margin: 0.25em;
+		font-family: impact, sans-serif;
+		text-transform: uppercase;
 		text-align: center;
-		left: 0;
-		right: 0;
+		font-size: 2rem;
+		-webkit-text-fill-color: white;
+		-webkit-text-stroke-width: 0.05em;
+		-webkit-text-stroke-color: black;
 	}
 
 	.topText {

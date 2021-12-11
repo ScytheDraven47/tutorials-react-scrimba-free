@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider } from 'react-query'
 import styled from '@emotion/styled'
 
 /* eslint-disable no-unused-vars */
@@ -11,33 +12,47 @@ import AirBnb from './components/AirBnb'
 import ContactList from './components/ContactList'
 import Jokes from './components/Jokes'
 
+const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			refetchOnWindowFocus: false,
+			refetchOnmount: false,
+			refetchOnReconnect: false,
+			retry: false,
+			staleTime: 1000 * 60 * 60 * 24,
+		},
+	},
+})
+
 const App = () => (
-	<AppWrapper>
-		{/* <Card>
-			<ReactFacts />
-		</Card> */}
-		{/* <Card>
-			<DigitalProfile />
-		</Card> */}
-		{/* <Card width='30rem'>
-			<AirBnb />
-		</Card> */}
-		{/* <Card width='35rem'>
-			<ContactList />
-		</Card> */}
-		<Card>
-			<Jokes />
-		</Card>
-		{/* <Card>
-			<TravelJournal />
-		</Card> */}
-		{/* <Card width='550px'>
-			<MemeGenerator />
-		</Card> */}
-		{/* <Card width='35rem'>
-			<LightBoxes />
-		</Card> */}
-	</AppWrapper>
+	<QueryClientProvider client={queryClient}>
+		<AppWrapper>
+			{/* <Card>
+				<ReactFacts />
+			</Card> */}
+			{/* <Card>
+				<DigitalProfile />
+			</Card> */}
+			{/* <Card width='30rem'>
+				<AirBnb />
+			</Card> */}
+			{/* <Card width='35rem'>
+				<ContactList />
+			</Card> */}
+			{/* <Card>
+				<Jokes />
+			</Card> */}
+			{/* <Card>
+				<TravelJournal />
+			</Card> */}
+			<Card width='550px'>
+				<MemeGenerator />
+			</Card>
+			{/* <Card width='35rem'>
+				<LightBoxes />
+			</Card> */}
+		</AppWrapper>
+	</QueryClientProvider>
 )
 
 export default App

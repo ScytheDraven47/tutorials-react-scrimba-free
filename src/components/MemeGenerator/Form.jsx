@@ -1,27 +1,23 @@
 import styled from '@emotion/styled'
 
-const Form = ({
-	topText,
-	bottomText,
-	changeTopText,
-	changeBottomText,
-	getNewMeme,
-}) => {
+const Form = ({ userText, changeText, getNewMeme, isReady }) => {
 	return (
 		<StyledDiv>
 			<input
 				placeholder='Top text'
 				type='text'
-				value={topText}
-				onChange={changeTopText}
+				name='top'
+				value={userText.top}
+				onChange={changeText}
 			/>
 			<input
 				placeholder='Bottom text'
 				type='text'
-				value={bottomText}
-				onChange={changeBottomText}
+				name='bottom'
+				value={userText.bottom}
+				onChange={changeText}
 			/>
-			<button type='button' onClick={getNewMeme}>
+			<button type='button' onClick={getNewMeme} disabled={isReady}>
 				Get a new meme image 🖼
 			</button>
 		</StyledDiv>
@@ -52,7 +48,7 @@ const StyledDiv = styled.div`
 	button {
 		font-size: 1rem;
 		grid-column: 1 / -1;
-		background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+		background: var(--clr-feat-gradient);
 		cursor: pointer;
 		display: flex;
 		align-items: center;
