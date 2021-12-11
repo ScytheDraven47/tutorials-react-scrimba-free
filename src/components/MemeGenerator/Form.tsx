@@ -1,6 +1,22 @@
 import styled from '@emotion/styled'
+import { EventHandler, SyntheticEvent } from 'react'
 
-const Form = ({ userText, changeText, getNewMeme, isReady }) => {
+interface FormProps {
+	userText: {
+		top: string
+		bottom: string
+	}
+	changeText: EventHandler<SyntheticEvent>
+	getNewMeme: EventHandler<SyntheticEvent>
+	isReady: boolean
+}
+
+const Form: React.FC<FormProps> = ({
+	userText,
+	changeText,
+	getNewMeme,
+	isReady,
+}) => {
 	return (
 		<StyledDiv>
 			<input

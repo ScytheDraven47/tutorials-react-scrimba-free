@@ -1,6 +1,15 @@
 import styled from '@emotion/styled'
 
-const Meme = ({ url, name, userText }) => {
+interface MemeProps {
+	url: string
+	name: string
+	userText: {
+		top: string
+		bottom: string
+	}
+}
+
+const Meme: React.FC<MemeProps> = ({ url, name, userText }) => {
 	return (
 		<StyledDiv>
 			<img src={url} alt={name} />
@@ -30,7 +39,7 @@ const StyledDiv = styled.div`
 		text-align: center;
 		font-size: 2rem;
 		-webkit-text-fill-color: white;
-		-webkit-text-stroke-width: 0.05em;
+		-webkit-text-stroke-width: 0.02em;
 		-webkit-text-stroke-color: black;
 	}
 

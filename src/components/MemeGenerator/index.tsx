@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, SyntheticEvent } from 'react'
 import { useQuery } from 'react-query'
 import styled from '@emotion/styled'
 import Form from './Form'
@@ -34,11 +34,8 @@ const MemeGenerator: React.FC = () => {
 		if (isSuccess) setMemes(data.data.memes)
 	}, [isSuccess, data])
 
-	const changeText = ({
-		target: { name, value },
-	}: {
-		target: { name: string; value: string }
-	}) => {
+	const changeText = ({ target }: SyntheticEvent) => {
+		const { name, value } = target as HTMLInputElement
 		setUserText((prev) => ({
 			...prev,
 			[name]: value,
