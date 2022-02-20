@@ -23,6 +23,7 @@ const StyledMain = styled.main`
 	position: relative;
 	isolation: isolate;
 	background: var(--clr-bg);
+	color: var(--clr-font);
 	padding: 2em 1.5em;
 	overflow: hidden;
 

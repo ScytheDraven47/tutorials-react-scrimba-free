@@ -27,9 +27,9 @@ const queryClient = new QueryClient({
 const App = () => (
 	<QueryClientProvider client={queryClient}>
 		<AppWrapper>
-			{/* <Card>
+			<Card>
 				<ReactFacts />
-			</Card> */}
+			</Card>
 			{/* <Card>
 				<DigitalProfile />
 			</Card> */}
@@ -45,9 +45,9 @@ const App = () => (
 			{/* <Card>
 				<TravelJournal />
 			</Card> */}
-			<Card width='550px'>
+			{/* <Card width='550px'>
 				<MemeGenerator />
-			</Card>
+			</Card> */}
 			{/* <Card width='35rem'>
 				<LightBoxes />
 			</Card> */}

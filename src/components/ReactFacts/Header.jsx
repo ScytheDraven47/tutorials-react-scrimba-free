@@ -1,19 +1,14 @@
 import styled from '@emotion/styled'
 import Logo from './Logo'
+import ThemeToggle from './ThemeToggle'
 
-const Header = () => (
+const Header = ({ isDark, toggleDark }) => (
 	<StyledHeader>
 		<div className='logo'>
 			<Logo className='logo__img' />
 			<span className='logo__title'>ReactFacts</span>
 		</div>
-		<nav className='nav'>
-			<ul className='nav__list'>
-				<li>Pricing</li>
-				<li>About</li>
-				<li>Contact</li>
-			</ul>
-		</nav>
+		<ThemeToggle isDark={isDark} toggleDark={toggleDark} />
 	</StyledHeader>
 )
 
@@ -23,6 +18,7 @@ const StyledHeader = styled.header`
 	display: flex;
 	align-items: center;
 	background-color: var(--clr-bg-dark);
+	color: var(--clr-font);
 	padding: 1.75em;
 	justify-content: space-between;
 

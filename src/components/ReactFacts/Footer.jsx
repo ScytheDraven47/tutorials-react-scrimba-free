@@ -12,6 +12,7 @@ const StyledFooter = styled.footer`
 	width: 100%;
 	padding: 0.75em;
 	background: var(--clr-bg-dark);
+	color: var(--clr-font);
 	display: flex;
 	justify-content: space-around;
 `
