@@ -27,9 +27,9 @@ const queryClient = new QueryClient({
 const App = () => (
 	<QueryClientProvider client={queryClient}>
 		<AppWrapper>
-			<Card>
+			{/* <Card>
 				<ReactFacts />
-			</Card>
+			</Card> */}
 			{/* <Card>
 				<DigitalProfile />
 			</Card> */}
