@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { nanoid } from 'nanoid'
 import Split from 'react-split'
 import Sidebar from './Sidebar'
@@ -11,8 +11,8 @@ const saveNotesToStorage = (notes) =>
 	localStorage.setItem('markdownNotes', JSON.stringify(notes))
 
 const Notes = () => {
-	const [notes, setNotes] = React.useState(getNotesFromStorage() || [])
-	const [currentNoteId, setCurrentNoteId] = React.useState(
+	const [notes, setNotes] = useState(() => getNotesFromStorage() || [])
+	const [currentNoteId, setCurrentNoteId] = useState(
 		(notes[0] && notes[0].id) || ''
 	)
 
