@@ -11,6 +11,7 @@ import DigitalProfile from './components/DigitalProfile'
 import AirBnb from './components/AirBnb'
 import ContactList from './components/ContactList'
 import Jokes from './components/Jokes'
+import Notes from './components/Notes'
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -25,34 +26,35 @@ const queryClient = new QueryClient({
 })
 
 const App = () => (
-	<QueryClientProvider client={queryClient}>
-		<AppWrapper>
-			{/* <Card>
-				<ReactFacts />
-			</Card> */}
-			{/* <Card>
-				<DigitalProfile />
-			</Card> */}
-			{/* <Card width='30rem'>
-				<AirBnb />
-			</Card> */}
-			{/* <Card width='35rem'>
-				<ContactList />
-			</Card> */}
-			{/* <Card>
-				<Jokes />
-			</Card> */}
-			{/* <Card>
-				<TravelJournal />
-			</Card> */}
-			{/* <Card width='550px'>
-				<MemeGenerator />
-			</Card> */}
-			{/* <Card width='35rem'>
-				<LightBoxes />
-			</Card> */}
-		</AppWrapper>
-	</QueryClientProvider>
+	<Notes />
+	// {/* <QueryClientProvider client={queryClient}> */}
+	// 	{/* <AppWrapper> */}
+	// 	{/* <Card>
+	// 			<ReactFacts />
+	// 		</Card> */}
+	// 	{/* <Card>
+	// 			<DigitalProfile />
+	// 		</Card> */}
+	// 	{/* <Card width='30rem'>
+	// 			<AirBnb />
+	// 		</Card> */}
+	// 	{/* <Card width='35rem'>
+	// 			<ContactList />
+	// 		</Card> */}
+	// 	{/* <Card>
+	// 			<Jokes />
+	// 		</Card> */}
+	// 	{/* <Card>
+	// 			<TravelJournal />
+	// 		</Card> */}
+	// 	{/* <Card width='550px'>
+	// 			<MemeGenerator />
+	// 		</Card> */}
+	// 	{/* <Card width='35rem'>
+	// 			<LightBoxes />
+	// 		</Card> */}
+	// 	{/* </AppWrapper> */}
+	// {/* </QueryClientProvider> */}
 )
 
 export default App
