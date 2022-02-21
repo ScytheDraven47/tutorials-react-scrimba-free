@@ -1,5 +1,11 @@
-const Sidebar = ({ notes, currentNote, setCurrentNoteId, newNote }) => {
-	const noteElements = notes.map((note, index) => (
+const Sidebar = ({
+	notes,
+	currentNote,
+	setCurrentNoteId,
+	newNote,
+	deleteNote,
+}) => {
+	const noteElements = notes.map((note) => (
 		<div key={note.id}>
 			<div
 				className={`title ${
@@ -7,7 +13,22 @@ const Sidebar = ({ notes, currentNote, setCurrentNoteId, newNote }) => {
 				}`}
 				onClick={() => setCurrentNoteId(note.id)}
 			>
-				<h4 className='text-snippet'>Note {index + 1}</h4>
+				<h4 className='text-snippet'>{note.body.split('\n')[0]}</h4>
+				<p className='summary'>
+					{new Date(note.modified).toLocaleString('en-NZ', {
+						day: '2-digit',
+						month: 'short',
+						year: '2-digit',
+						hour: '2-digit',
+						minute: '2-digit',
+					})}
+				</p>
+				<button
+					className='delete-btn'
+					onClick={(e) => deleteNote(e, note.id)}
+				>
+					<i className='gg-trash trash-icon'></i>
+				</button>
 			</div>
 		</div>
 	))

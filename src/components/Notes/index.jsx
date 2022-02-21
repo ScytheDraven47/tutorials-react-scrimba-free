@@ -22,6 +22,7 @@ const Notes = () => {
 		const newNote = {
 			id: nanoid(),
 			body: "# Type your markdown note's title here",
+			modified: Date.now(),
 		}
 		setNotes((prevNotes) => [newNote, ...prevNotes])
 		setCurrentNoteId(newNote.id)
@@ -29,11 +30,21 @@ const Notes = () => {
 
 	function updateNote(text) {
 		setNotes((oldNotes) =>
-			oldNotes.map((oldNote) => {
-				return oldNote.id === currentNoteId
-					? { ...oldNote, body: text }
-					: oldNote
-			})
+			oldNotes
+				.map((oldNote) => {
+					return oldNote.id === currentNoteId
+						? { ...oldNote, body: text, modified: Date.now() }
+						: oldNote
+				})
+				.sort((a, b) => b.modified - a.modified)
+		)
+	}
+
+	function deleteNote(event, noteId) {
+		event.stopPropagation()
+		console.log('deleted note', noteId)
+		setNotes((oldNotes) =>
+			oldNotes.filter((oldNote) => oldNote.id !== noteId)
 		)
 	}
 
@@ -58,6 +69,7 @@ const Notes = () => {
 						currentNote={findCurrentNote()}
 						setCurrentNoteId={setCurrentNoteId}
 						newNote={createNewNote}
+						deleteNote={deleteNote}
 					/>
 					{currentNoteId && notes.length > 0 && (
 						<Editor
@@ -178,7 +190,7 @@ const StyledMain = styled.main`
 		font-size: 0.8rem;
 		font-weight: 400;
 		line-height: 1.2rem;
-		color: #4a4e74;
+		color: var(--clr-accent);
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -220,5 +232,74 @@ const StyledMain = styled.main`
 		justify-content: center;
 		align-items: center;
 		background-color: whitesmoke;
+	}
+
+	.summary {
+		padding-inline: 5px;
+		font-size: 0.8rem;
+		font-weight: 400;
+		line-height: 1.2rem;
+		color: var(--clr-accent);
+	}
+
+	.delete-btn {
+		display: none;
+		background: none;
+		border: none;
+	}
+
+	.title:hover > .summary {
+		/* display: none; */
+	}
+
+	.title:hover > .delete-btn {
+		display: block;
+	}
+
+	.trash-icon {
+		cursor: pointer;
+	}
+
+	.gg-trash {
+		box-sizing: border-box;
+		position: relative;
+		display: block;
+		transform: scale(var(--ggs, 1));
+		width: 10px;
+		height: 12px;
+		border: 2px solid transparent;
+		box-shadow: 0 0 0 2px var(--clr-font), inset -2px 0 0 var(--clr-font),
+			inset 2px 0 0 var(--clr-font);
+		border-bottom-left-radius: 1px;
+		border-bottom-right-radius: 1px;
+		margin-top: 4px;
+	}
+
+	.gg-trash::after,
+	.gg-trash::before {
+		content: '';
+		display: block;
+		box-sizing: border-box;
+		position: absolute;
+	}
+
+	.gg-trash::after {
+		background: var(--clr-font);
+		border-radius: 3px;
+		width: 16px;
+		height: 2px;
+		top: -4px;
+		left: -5px;
+	}
+
+	.gg-trash::before {
+		width: 10px;
+		height: 4px;
+		border: 2px solid var(--clr-font);
+		border-bottom: transparent;
+		border-top-left-radius: 2px;
+		border-top-right-radius: 2px;
+		top: -7px;
+		left: -2px;
 	}
 `
