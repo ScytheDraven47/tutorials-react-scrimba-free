@@ -13,6 +13,7 @@ import ContactList from './components/ContactList'
 import Jokes from './components/Jokes'
 import Notes from './components/Notes'
 import Tenzies from './components/Tenzies'
+import Quiz from './components/Quiz'
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -29,8 +30,11 @@ const queryClient = new QueryClient({
 const App = () => (
 	<QueryClientProvider client={queryClient}>
 		<AppWrapper>
-			<Card>
+			{/* <Card>
 				<Tenzies />
+			</Card> */}
+			<Card>
+				<Quiz />
 			</Card>
 			{/* <Notes /> */}
 			{/* <Card>
