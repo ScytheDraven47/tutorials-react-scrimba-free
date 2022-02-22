@@ -30,37 +30,39 @@ const queryClient = new QueryClient({
 const App = () => (
 	<QueryClientProvider client={queryClient}>
 		<AppWrapper>
-			{/* <Card>
+			<Card>
+				<ReactFacts />
+			</Card>
+			<Card>
+				<DigitalProfile />
+			</Card>
+			<Card width='30rem'>
+				<AirBnb />
+			</Card>
+			<Card width='35rem'>
+				<ContactList />
+			</Card>
+			<Card>
+				<Jokes />
+			</Card>
+			<Card>
+				<TravelJournal />
+			</Card>
+			<Card width='550px'>
+				<MemeGenerator />
+			</Card>
+			<Card width='35rem'>
+				<LightBoxes />
+			</Card>
+			<Card height='80vh'>
+				<Notes />
+			</Card>
+			<Card>
 				<Tenzies />
-			</Card> */}
+			</Card>
 			<Card>
 				<Quiz />
 			</Card>
-			{/* <Notes /> */}
-			{/* <Card>
-	 			<ReactFacts />
-	 		</Card> */}
-			{/* <Card>
-	 			<DigitalProfile />
-	 		</Card> */}
-			{/* <Card width='30rem'>
-	 			<AirBnb />
-	 		</Card> */}
-			{/* <Card width='35rem'>
-	 			<ContactList />
-	 		</Card> */}
-			{/* <Card>
-	 			<Jokes />
-	 		</Card> */}
-			{/* <Card>
-	 			<TravelJournal />
-	 		</Card> */}
-			{/* <Card width='550px'>
-	 			<MemeGenerator />
-	 		</Card> */}
-			{/* <Card width='35rem'>
-	 			<LightBoxes />
-	 		</Card> */}
 		</AppWrapper>
 	</QueryClientProvider>
 )
